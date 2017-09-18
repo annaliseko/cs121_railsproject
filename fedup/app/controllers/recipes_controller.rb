@@ -40,6 +40,13 @@ class RecipesController < ApplicationController
 		redirect_to root_path, notice: "Successfully deleted recipe"
 	end 
 
+	def complete
+		@recipe = Recipe.find(params[:id])
+		@recipe.update_attribute(:completed_at, Time.now)
+		redirect_to root_path
+	end
+
+
 	private
 
 	def recipe_params
