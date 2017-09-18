@@ -1,8 +1,6 @@
 <% @recipe.each_slice(3) do |recipes| %>
   <div class="row">
     <% recipes.each do |recipe| %>
-      
-      <% if recipe.completed? %>
 
         <div class="col-md-4">
           <div class="recipe">
@@ -19,10 +17,6 @@
             <% end %>
           </div>
         </div>
-
-      <% else %>
-      <% end %>
-
     <% end %>
   </div>
 <% end %>
