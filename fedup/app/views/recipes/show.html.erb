@@ -12,13 +12,13 @@
           <%= @recipe.description %>
         </p>
         <% if @recipe.completed? %>
-          <p style="opacity: 0.5;"> This recipe was most recently cooked <%= time_ago_in_words(@recipe.completed_at) %> ago </p>
+          <p style="opacity: 0.5;"> Last cooked by a member <%= time_ago_in_words(@recipe.completed_at) %> ago </p>
           <br>
           <br>
           <p>
         <% end %>
         Submitted by
-        <%= @recipe.user.email %>
+        <%= @recipe.user.username %>
         </p>
         <p style="opacity: 0.7;">
         <%= link_to "Mark recipe as completed √", complete_recipe_path, method: :patch %>
